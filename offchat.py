@@ -29,9 +29,6 @@ class OffChat(loader.Module):
     @loader.command(pattern="soffchat")
     async def soffchat(self, message: Message):
         """Close chat"""
-        if message.chat.type not in ["supergroup", "channel"]:
-            await utils.answer(message, self.strings("not_supergroup"))
-            return
         chat_id = message.chat.id
         chat = await client.get_chat(chat_id)
         admins = await client.get_chat_members(chat_id, filter="administrators")
