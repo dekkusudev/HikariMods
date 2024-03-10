@@ -1,5 +1,5 @@
 from hikkatl.types import Message
-from .. import loader
+from .. import loader, utils
 
 @loader.tds
 class MyModule(loader.Module):
